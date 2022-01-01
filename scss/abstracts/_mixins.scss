@@ -1,0 +1,36 @@
+@use 'variables';
+
+// Pseudo Elements
+
+@mixin pseudo($loc: after, $content: '', $pos: absolute, $top: 0, $bottom: 0, $left: 0, $right: 0) {
+	position: relative;
+
+	&::#{$loc}before {
+		content: $content;
+		position: $pos;
+		@content;
+	}
+}
+// Example - Write less code with these Sass mixins 7:00
+// @include pseudo(before){
+// 	opacity: 0.8;
+// }
+
+// Button hover
+@mixin hover-lift() {
+	transition: transform 350ms ease-in-out;
+
+	&hover,
+	&:focus {
+		transform: scale(1.05);
+	}
+}
+
+// Container
+@mixin container() {
+	width: 128rem;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 4rem;
+}

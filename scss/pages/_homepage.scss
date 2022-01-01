@@ -1,0 +1,349 @@
+@use '../abstracts' as *;
+
+// Hero Section
+.hero {
+	background: url('../../public/assets/home/desktop/image-hero-coffeepress.jpg') no-repeat;
+	background-size: contain;
+	@include breakpoint(medium) {
+		background: url('../../public/assets/home/tablet/image-hero-coffeepress.jpg') no-repeat;
+		background-size: cover;
+	}
+	@include breakpoint(xsmall) {
+		background: url('../../public/assets/home/mobile/image-hero-coffeepress.jpg') no-repeat;
+		background-size: cover;
+	}
+
+	background-size: cover;
+	border-radius: var(--border-radius-default);
+	width: 32.7rem;
+
+	@include container();
+	padding: 0;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding: 11.7rem 0 11.7rem 8.5rem;
+		max-width: 59.3rem;
+
+		@include breakpoint(medium) {
+			padding: 10rem 5.8rem 10rem 5.8rem;
+			max-width: 55rem;
+		}
+
+		@include breakpoint(xsmall) {
+			place-items: center;
+			text-align: center;
+			width: 100%;
+			padding: 10rem 2.4rem 10rem 2.4rem;
+		}
+	}
+
+	&--desc {
+		color: var(--light-cream);
+		padding: 3.2rem 0 5.6rem 0;
+		width: 44rem;
+
+		@include breakpoint(xsmall) {
+			width: 100%;
+		}
+	}
+}
+
+// Collection Section
+.collection {
+	padding-top: 13.6rem;
+	display: flex;
+	place-items: center;
+	flex-direction: column;
+	text-align: center;
+	@include breakpoint(medium) {
+		padding-top: 14.4rem;
+	}
+	&__content {
+		position: relative;
+	}
+
+	&--text {
+		margin: auto;
+	}
+
+	&__list {
+		display: flex;
+		place-items: center;
+		gap: 3rem;
+		max-width: 110rem;
+		z-index: 2;
+		margin-top: -4rem;
+		@include breakpoint(medium) {
+			flex-direction: column;
+			width: 100%;
+			margin-top: -3rem;
+		}
+		@include breakpoint(xsmall) {
+			margin-top: 10rem;
+		}
+
+		&-items {
+			display: flex;
+			flex-direction: column;
+			@include breakpoint(medium) {
+				flex-direction: row;
+				gap: 3.6rem;
+				align-items: center;
+			}
+			@include breakpoint(xsmall) {
+				flex-direction: column;
+				text-align: center;
+				gap: 2.4rem;
+				padding-top: 4.8rem;
+			}
+		}
+
+		&-content {
+			padding-top: 7.2rem;
+			display: flex;
+			flex-direction: column;
+			gap: 2.4rem;
+			@include breakpoint(medium) {
+				width: 28.2rem;
+				text-align: left;
+				padding-top: 0;
+			}
+			@include breakpoint(xsmall) {
+				text-align: center;
+			}
+		}
+	}
+}
+
+// Benefits Section
+.benefits {
+	padding-top: 20rem;
+	margin-bottom: 35.1rem;
+	@include breakpoint(medium) {
+		padding-top: 14.4rem;
+	}
+	@include breakpoint(medium) {
+		padding-top: 12rem;
+	}
+
+	&__content {
+		background: var(--dark-grey-blue);
+		// padding: 10rem 8.5rem 31.7rem 8.5rem;
+		padding: 10rem 0rem 31.7rem 0rem;
+		border-radius: var(--border-radius-default);
+		@include breakpoint(medium) {
+			padding: 5.6rem 5.7rem 36.8rem 5.7rem;
+		}
+		@include breakpoint(medium) {
+			padding: 5.6rem 2.4rem 36.8rem 2.4rem;
+		}
+
+		&-inner {
+			width: 54rem;
+			text-align: center;
+			margin: auto;
+			padding-bottom: 8.6rem;
+			@include breakpoint(medium) {
+				width: 100%;
+			}
+		}
+	}
+
+	&--subhead,
+	&--desc {
+		color: var(--light-cream);
+	}
+
+	&--desc {
+		padding-top: 3.2rem;
+	}
+
+	&__card {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+		max-width: 111rem;
+		width: 100%;
+		text-align: center;
+		margin: auto;
+		gap: 3rem;
+		margin-bottom: -47rem;
+		@include breakpoint(medium) {
+			margin-bottom: -100rem;
+		}
+		@include breakpoint(xsmall) {
+			grid-template-columns: repeat(auto-fit, minmax(27.9rem, 1fr));
+		}
+
+		&-items {
+			padding: 7.2rem 4.8rem 4.8rem 4.8rem;
+			background: var(--dark-cyan);
+			border-radius: var(--border-radius-default);
+			color: var(--light-cream);
+
+			display: flex;
+			flex-direction: column;
+			place-items: center;
+
+			@include breakpoint(medium) {
+				flex-direction: row;
+				text-align: left;
+				justify-content: center;
+				align-content: center;
+				gap: 5.5rem;
+			}
+			@include breakpoint(xsmall) {
+				flex-direction: column;
+				text-align: center;
+			}
+		}
+
+		&-content {
+			@include breakpoint(medium) {
+				max-width: 34.4rem;
+				text-align: left;
+			}
+			@include breakpoint(xsmall) {
+				text-align: center;
+				width: 100%;
+			}
+		}
+
+		&-subhead,
+		&-desc {
+			color: var(--light-cream);
+		}
+
+		&-subhead {
+			padding-top: 5.6rem;
+			@include breakpoint(medium) {
+				padding-top: 0;
+			}
+		}
+
+		&-desc {
+			padding-top: 2.4rem;
+			font-size: 1.6rem;
+			line-height: 2.6rem;
+			@include breakpoint(medium) {
+				padding-top: 1.6rem;
+			}
+		}
+	}
+}
+
+#third {
+	padding-top: 6.7rem;
+	@include breakpoint(medium) {
+		padding-top: 0;
+	}
+}
+
+// Works
+.work {
+	@include breakpoint(medium) {
+		padding-top: 14.4rem;
+	}
+	@include breakpoint(xsmall) {
+		padding-top: 35rem;
+	}
+
+	&--subhead {
+		color: var(--grey);
+		padding-bottom: 8rem;
+	}
+
+	&__lines {
+		padding-bottom: 6.7rem;
+		position: relative;
+		width: 76rem;
+		@include breakpoint(medium) {
+			width: 46.7rem;
+		}
+		@include breakpoint(xsmall) {
+			display: none;
+		}
+	}
+
+	&__circle {
+		width: 3.1rem;
+		height: 3.1rem;
+		border-radius: 50%;
+		background: var(--light-cream);
+		border: 0.2rem solid var(--dark-cyan);
+		z-index: 10;
+	}
+
+	&__line {
+		position: absolute;
+		top: 1.5rem;
+		z-index: -99;
+		color: var(--pale-orange);
+		width: 100%;
+	}
+
+	&__choices {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(28.5rem, 1fr));
+		gap: 9.5rem;
+		padding-bottom: 6.4rem;
+		@include breakpoint(medium) {
+			gap: 1rem;
+		}
+		@include breakpoint(xsmall) {
+			gap: 5.6rem;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&-items {
+			text-align: left;
+			@include breakpoint(xsmall) {
+				text-align: center;
+			}
+		}
+	}
+
+	&--number {
+		color: var(--pale-orange);
+		@include breakpoint(xsmall) {
+			font-size: 7.2rem;
+			line-height: 7.2rem;
+		}
+	}
+
+	&--subhead {
+		padding-top: 3.8rem;
+		padding-bottom: 4.3rem;
+		color: var(--dark-grey-blue);
+		width: 25.5rem;
+		@include breakpoint(xsmall) {
+			width: 100%;
+			padding: 2.4rem 0;
+			text-align: center;
+			padding-bottom: 8rem;
+		}
+	}
+
+	&__content {
+		width: 100%;
+	}
+
+	&__btn {
+		@include breakpoint(xsmall) {
+			margin-left: 8rem;
+		}
+	}
+}
+
+.line2 {
+	position: absolute;
+	left: 50%;
+	top: -0.3rem;
+}
+.line3 {
+	position: absolute;
+	left: 100%;
+	top: -0.3rem;
+}

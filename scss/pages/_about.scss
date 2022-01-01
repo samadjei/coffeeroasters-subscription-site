@@ -1,0 +1,149 @@
+@use '../abstracts' as *;
+
+// Commitment Section
+.commitment {
+	padding-top: 16.8rem;
+	@include breakpoint(medium) {
+		padding-top: 14.4rem;
+	}
+	&__flex {
+		display: flex;
+		gap: 12.5rem;
+		place-items: center;
+		@include breakpoint(medium) {
+			gap: 6.9rem;
+		}
+		@include breakpoint(xsmall) {
+			flex-direction: column;
+		}
+	}
+
+	&__bg-image {
+		background: url('../../public/assets/about/desktop/image-commitment.jpg') no-repeat;
+		background-size: cover;
+		height: 52rem;
+		width: 46rem;
+		border-radius: var(--border-radius-default);
+		@include breakpoint(xsmall) {
+			width: 100%;
+		}
+	}
+
+	&__content {
+		width: 54rem;
+		@include breakpoint(xsmall) {
+			width: 100%;
+			text-align: center;
+		}
+
+		&-subhead {
+			padding-bottom: 3.2rem;
+		}
+	}
+}
+
+// Quality Section
+.quality {
+	padding-top: 25.6rem;
+	@include breakpoint(medium) {
+		padding-top: 30.4rem;
+	}
+
+	&__flex {
+		display: flex;
+		gap: 5rem;
+		place-items: center;
+		background: var(--dark-grey-blue);
+		border-radius: var(--border-radius-default);
+		@include breakpoint(medium) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__content {
+		color: var(--light-cream);
+		padding: 8.8rem 0 17.6rem 8.5rem;
+		width: 60rem;
+		// margin-right: -4rem;
+		@include breakpoint(medium) {
+			padding-left: 7.4rem;
+			padding-right: 7.4rem;
+			padding-bottom: 6.7rem;
+			padding-top: 4.4rem;
+			width: 100%;
+			text-align: center;
+		}
+		@include breakpoint(medium) {
+			padding-left: 2.4rem;
+			padding-right: 2.4rem;
+			padding-bottom: 6.1rem;
+		}
+	}
+
+	&--subhead,
+	&--desc {
+		color: var(--light-cream);
+	}
+
+	&--subhead {
+		padding-bottom: 3.2rem;
+	}
+
+	&__bg-image {
+		background: url('../../public/assets/about/desktop/image-quality.jpg') no-repeat;
+		background-size: cover;
+		width: 44.5rem;
+		height: 47.4rem;
+		border-radius: var(--border-radius-default);
+		margin-top: -20rem;
+		@include breakpoint(medium) {
+			background: url('../../public/assets/about/tablet/image-quality.jpg') no-repeat;
+			margin-top: -15rem;
+			width: 80%;
+			height: 32rem;
+			background-size: cover;
+		}
+		@include breakpoint(xsmall) {
+			background: url('../../public/assets/about/mobile/image-quality.jpg') no-repeat;
+			margin-top: -7rem;
+			width: 80%;
+			height: 15.6rem;
+			background-size: cover;
+		}
+	}
+}
+
+// Headquaters Section
+.headquaters {
+	padding-top: 16.8rem;
+	@include breakpoint(medium) {
+		padding-top: 12rem;
+	}
+
+	&__flex {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 9.5rem;
+		padding-top: 7.2rem;
+		@include breakpoint(medium) {
+			gap: 6.9rem;
+		}
+		@include breakpoint(xsmall) {
+			flex-direction: column;
+			text-align: center;
+			gap: 8rem;
+		}
+	}
+
+	&--title {
+		@include breakpoint(xsmall) {
+			text-align: center;
+		}
+	}
+
+	&--country {
+		padding-top: 4.593rem;
+		padding-bottom: 2.4rem;
+	}
+}

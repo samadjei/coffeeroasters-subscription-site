@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+// Shared Hero
+
+.sharedHero {
+	background: url('../../public/assets/about/desktop/image-hero-whitecup.jpg') no-repeat;
+	background-size: cover;
+	border-radius: var(--border-radius-default);
+
+	&__content {
+		max-width: 51rem;
+		padding: 13.7rem 0 13.7rem 8.5rem;
+		@include breakpoint(xsmall) {
+			width: 100%;
+			padding: 16.3rem 2.4rem 8.7rem 2.4rem;
+			text-align: center;
+		}
+	}
+
+	&--title,
+	&--desc {
+		color: var(--light-cream);
+	}
+
+	&--desc {
+		padding-top: 2.4rem;
+	}
+}
