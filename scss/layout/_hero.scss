@@ -1,11 +1,17 @@
 @use '../abstracts' as *;
 // Shared Hero
 
-.sharedHero {
+.about.sharedHero {
 	background: url('../../public/assets/about/desktop/image-hero-whitecup.jpg') no-repeat;
 	background-size: cover;
 	border-radius: var(--border-radius-default);
+}
+.subscribe.sharedHero {
+	background: url('../../public/assets/plan/desktop/image-hero-blackcup.jpg') no-repeat;
+	background-size: cover;
+}
 
+.sharedHero {
 	&__content {
 		max-width: 51rem;
 		padding: 13.7rem 0 13.7rem 8.5rem;

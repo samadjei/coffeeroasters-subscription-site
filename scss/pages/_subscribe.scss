@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.steps {
+	padding-top: 16.8rem;
+
+	&__bg {
+		background: var(--dark-grey-blue);
+		color: var(--light-cream);
+		padding: 9.1rem 0 4rem 8.1rem;
+		border-radius: var(--border-radius-default);
+	}
+
+	&__lines {
+		padding-bottom: 6.7rem;
+		position: relative;
+		width: 80rem;
+		@include breakpoint(medium) {
+			width: 46.7rem;
+		}
+		@include breakpoint(xsmall) {
+			display: none;
+		}
+	}
+
+	&__circle {
+		width: 3.1rem;
+		height: 3.1rem;
+		border-radius: 50%;
+		background: transparent;
+		border: 0.2rem solid var(--dark-cyan);
+	}
+
+	&__line {
+		position: absolute;
+		top: 1.5rem;
+		color: var(--pale-orange);
+		width: 100%;
+		right: -2rem;
+	}
+}
+
+.subscribe.work--subhead,
+.subscribe.work--desc {
+	color: var(--light-cream);
+}
+
+// Toggles
+.option {
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+	}
+}

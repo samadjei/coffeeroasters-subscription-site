@@ -240,6 +240,15 @@
 	}
 }
 
+.homePage.work--number,
+.homePage.work--desc {
+	color: red;
+}
+
+.homePage {
+	display: none;
+}
+
 // Works
 .work {
 	@include breakpoint(medium) {
@@ -278,9 +287,10 @@
 	&__line {
 		position: absolute;
 		top: 1.5rem;
-		z-index: -99;
 		color: var(--pale-orange);
 		width: 100%;
+		right: -2rem;
+		z-index: -99;
 	}
 
 	&__choices {
@@ -316,7 +326,6 @@
 	&--subhead {
 		padding-top: 3.8rem;
 		padding-bottom: 4.3rem;
-		color: var(--dark-grey-blue);
 		width: 25.5rem;
 		@include breakpoint(xsmall) {
 			width: 100%;
@@ -340,10 +349,10 @@
 .line2 {
 	position: absolute;
 	left: 50%;
-	top: -0.3rem;
+	top: -0.1rem;
 }
 .line3 {
 	position: absolute;
 	left: 100%;
-	top: -0.3rem;
+	top: -0.1rem;
 }
