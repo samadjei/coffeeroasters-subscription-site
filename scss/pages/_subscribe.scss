@@ -44,10 +44,99 @@
 	color: var(--light-cream);
 }
 
+// Quesiton
+.options {
+	max-width: 73rem;
+}
+
 // Toggles
+
+.options .option.open .option--title {
+	margin-bottom: 1.5rem;
+	transition: all 0.4s ease;
+}
+.options .option.open .option--title::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.options .option.open .option__items {
+	max-height: 100rem;
+	opacity: 1;
+}
+
 .option {
+	padding-bottom: 8.8rem;
+	cursor: pointer;
+	&--title {
+		color: var(--grey);
+		transition: all 0.4s ease;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 0rem;
+			transform: translateY(-50%);
+			height: 1.192rem;
+			width: 1.819rem;
+			background-image: url('../../public/assets/plan/desktop/icon-arrow.svg');
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&--subhead {
+		color: var(--dark-grey-blue);
+	}
+
 	&__items {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(22.8rem, 1fr));
+		gap: 2.3rem;
+		padding-top: 5.6rem;
+		opacity: 0;
+		max-height: 0;
+		overflow-y: hidden;
+		transition: all 0.4s ease;
+	}
+
+	&__inner {
+		background: var(--light-grey);
+		border-radius: var(--border-radius-option);
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		text-align: left;
+		padding: 3.2rem 2.8rem 8.4rem 2.8rem;
+		cursor: pointer;
+		transform: all 0.4s ease-in-out;
+		&:hover,
+		&:focus {
+			background: var(--dark-cyan);
+			color: var(--light-cream);
+		}
+	}
+}
+
+.questions {
+	display: flex;
+	gap: 12.5rem;
+}
+
+.select {
+	// width: 255px;
+	// height: 356px;
+
+	align-items: center;
+
+	&__content {
+		display: flex;
+		align-items: center;
+	}
+
+	&--number {
+		color: var(--dark-cyan);
 	}
 }
