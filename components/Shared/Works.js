@@ -16,7 +16,7 @@ const Works = (props) => {
 				</div>
 				<WorkChoices className="homePage" />
 				<div className="work__btn">
-					<Link href="/">
+					<Link href="/Subscribe">
 						<Button children="Create a plan" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
 					</Link>
 				</div>

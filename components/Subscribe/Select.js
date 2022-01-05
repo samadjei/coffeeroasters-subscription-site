@@ -1,15 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { Choices } from '../Data';
 
 const Select = () => {
 	return (
 		<ul className="select">
-			<li className='select__content'><h4 className='select--number'>01</h4>Preferences</li>
-			<li className='select__content'><h4 className='select--number'>02</h4>Bean Type</li>
-			<li className='select__content'><h4 className='select--number'>03</h4>Quantity</li>
-			<li className='select__content'><h4 className='select--number'>04</h4>Grind Option</li>
-			<li className='select__content'><h4 className='select--number'>05</h4>Deliveries</li>
+			{Choices.map((choice) => {
+				return (
+					<div key={choice.id}>
+						<li className="select__content">
+							<h4 className="select__title">
+								<span className="select--number">{choice.number}</span> {choice.title}
+							</h4>
+						</li>
+					</div>
+				);
+			})}
 		</ul>
-	)
-}
+	);
+};
 
-export default Select
+export default Select;

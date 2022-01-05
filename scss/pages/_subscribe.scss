@@ -45,27 +45,19 @@
 }
 
 // Quesiton
-.options {
-	max-width: 73rem;
-}
-
-// Toggles
-
-.options .option.open .option--title {
-	margin-bottom: 1.5rem;
-	transition: all 0.4s ease;
-}
-.options .option.open .option--title::after {
-	transform: translateY(-50%) rotate(180deg);
-}
-
-.options .option.open .option__items {
-	max-height: 100rem;
-	opacity: 1;
+.questions {
+	padding-top: 16.8rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12.5rem;
+	&__selection {
+		width: 100%;
+	}
 }
 
 .option {
-	padding-bottom: 8.8rem;
+	// padding-bottom: 8.8rem;
 	cursor: pointer;
 	&--title {
 		color: var(--grey);
@@ -96,6 +88,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(22.8rem, 1fr));
 		gap: 2.3rem;
 		padding-top: 5.6rem;
+		padding-bottom: 8.8rem;
 		opacity: 0;
 		max-height: 0;
 		overflow-y: hidden;
@@ -120,23 +113,42 @@
 	}
 }
 
-.questions {
-	display: flex;
-	gap: 12.5rem;
+// Toggles
+
+.questions .option.open .option--title {
+	margin-bottom: 1.5rem;
+	transition: all 0.4s ease;
+}
+.questions .option.open .option--title::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.questions .option.open .option__items {
+	max-height: 100rem;
+	opacity: 1;
 }
 
 .select {
-	// width: 255px;
-	// height: 356px;
-
-	align-items: center;
-
 	&__content {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
+		padding-bottom: 4.9rem;
+		cursor: pointer;
+		width: 25.5rem;
+		position: relative;
+		&::after {
+			content: '';
+			border: 1px solid var(--grey);
+			width: 100%;
+			position: absolute;
+			top: 70%;
+			opacity: 0.25;
+		}
 	}
 
 	&--number {
 		color: var(--dark-cyan);
+		padding-right: 2.35rem;
 	}
 }

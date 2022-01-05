@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { Questions } from '../Data';
-import Accordions from './Accordions';
 import Select from './Select';
+import Accordions from './Accordions';
 const Accordion = () => {
 	const [questions, setQuestions] = useState([...Questions]);
 
-	const toggleQuestions = (index) => {
+	const toggleQuestion = (index) => {
 		// map thorugh each question and get its index
 		setQuestions(
-			questions.map((option, i) => {
+			questions.map((question, i) => {
 				if (i === index) {
-					option.open = !option.open;
+					question.open = !question.open;
 				} else {
 					// toggled the value to true or false
-					option.open = false;
+					question.open = false;
 				}
-				return option;
+				return question;
 			})
 		);
 	};
 
 	return (
-		<div className='questions'>
-			<Select />
-			<div className="options">
-				{Questions.map((option, i) => (
-					<div>
-						<Accordions option={option} index={i} toggleQuestions={toggleQuestions} />
+		<div className="questions">
+				<Select />
+			<div className="questions__selection">
+				{questions.map((question, i) => (
+					<div key={question.id}>
+						<Accordions question={question} index={i} toggleQuestion={toggleQuestion} />
 					</div>
 				))}
 			</div>

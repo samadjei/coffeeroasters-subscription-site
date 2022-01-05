@@ -199,7 +199,7 @@ export const Questions = [
 	},
 ];
 
-export const Select = [
+export const Choices = [
 	{
 		id: 19,
 		number: "01",
