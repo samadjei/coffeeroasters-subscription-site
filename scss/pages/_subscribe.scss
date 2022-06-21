@@ -57,26 +57,11 @@
 }
 
 .option {
-	// padding-bottom: 8.8rem;
+	padding-bottom: 8.8rem;
 	cursor: pointer;
 	&--title {
 		color: var(--grey);
 		transition: all 0.4s ease;
-		position: relative;
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			right: 0rem;
-			transform: translateY(-50%);
-			height: 1.192rem;
-			width: 1.819rem;
-			background-image: url('../../public/assets/plan/desktop/icon-arrow.svg');
-			background-position: center;
-			background-size: contain;
-			background-repeat: no-repeat;
-		}
 	}
 
 	&--subhead {
@@ -86,13 +71,12 @@
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(22.8rem, 1fr));
+		height: 25rem;
 		gap: 2.3rem;
 		padding-top: 5.6rem;
-		padding-bottom: 8.8rem;
-		opacity: 0;
-		max-height: 0;
-		overflow-y: hidden;
-		transition: all 0.4s ease;
+		.selected {
+			background: var(--dark-cyan);
+		}
 	}
 
 	&__inner {
@@ -107,7 +91,7 @@
 		transform: all 0.4s ease-in-out;
 		&:hover,
 		&:focus {
-			background: var(--dark-cyan);
+			background: var(--pale-orange);
 			color: var(--light-cream);
 		}
 	}
@@ -115,11 +99,21 @@
 
 // Toggles
 
-.questions .option.open .option--title {
-	margin-bottom: 1.5rem;
-	transition: all 0.4s ease;
-}
 .questions .option.open .option--title::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.option__toggle {
+	display: flex;
+	align-items: center;
+}
+
+.option__chevron {
+	margin-left: auto;
+	// transition: all 0.4s ease-in-out;
+}
+
+.rotate {
 	transform: translateY(-50%) rotate(180deg);
 }
 
@@ -151,4 +145,46 @@
 		color: var(--dark-cyan);
 		padding-right: 2.35rem;
 	}
+}
+
+
+input[type='radio']:checked + .option__inner {
+	background: var(--dark-cyan);
+}
+
+
+input[type='radio'] {
+	// display: none;
+}
+
+
+// Selects
+.accordion {
+  max-width: 15rem;
+  margin-bottom: 0.5rem;
+}
+
+.accordion button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion button:hover {
+  background: var(--primary-color);
+}
+
+.accordion .content {
+  padding: 0.5rem;
+  background: #f7f7f7;
+}
+
+.selects-flex {
+	display: flex;
 }

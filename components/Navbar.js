@@ -37,6 +37,7 @@ class Nav extends Component {
 						</Link>
 					</li>
 				</ul>
+				
 			</nav>
 		);
 	}
