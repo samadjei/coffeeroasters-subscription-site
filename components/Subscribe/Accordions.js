@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Chevron from './Chevron';
+
 
 const Accordions = ({ question }) => {
 	// States
@@ -23,9 +23,6 @@ const Accordions = ({ question }) => {
 		<div className="option">
 			<div className={`option__toggle ${!text} }`} onClick={toggleAccordion}>
 				<h2 className="option--title">{question.question}</h2>
-				<div className={`${rotate}`}>
-					<Chevron />
-				</div>
 			</div>
 
 			{text && (

@@ -2,7 +2,7 @@ import React from 'react';
 
 const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary'];
 
-const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile'];
+const SIZES = ['btn--desktop', 'btn--tablet', 'btn--mobile', 'btn--checkout'];
 
 const Button = React.forwardRef(({ onClick, href, buttonStyle, buttonSize, type, children }, ref) => {
 	const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];

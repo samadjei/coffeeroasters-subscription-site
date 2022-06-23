@@ -1,38 +1,39 @@
 import { useState } from "react";
 import { useToggle } from "../../hooks/useToggle";
-
+import { FiChevronDown } from "react-icons/fi";
+import { FiChevronUp } from "react-icons/fi";
 const Selects = (props) => {
   const { status: expand, toggleStatus: toggleExpand } = useToggle();
   const option = props.option;
-  console.log(option)
-
+	const changeWord = props.changeWord;
+	
   return (
-    <div className="accordion">
-      <button onClick={toggleExpand}>
-        {option.question}<span>{expand ? "-" : "+"}</span>
+    <div className="option">
+      <button className="option__btn" onClick={toggleExpand}><h2 className="option--title">{option.question}</h2>
+        <span>{expand ? <FiChevronUp className="option__chevron"/> : <FiChevronDown className="option__chevron"/>}</span>
       </button>
       {expand && 
-        <div className="selects-flex">
-					<div>
-						<input type="radio" name="service" id="1" />
-						<label htmlFor="1">
-							<h4 className="selectd">{option.option1}</h4>
-							<p>{option.option1Details}</p>
+        <div className="option__items">
+					<div onChange={(e) => changeWord(e.target.value)} >
+						<input type="radio" name={option.id}  id={option.optionOne.id} />
+						<label className="option__inner" htmlFor={option.optionOne.title}>
+							<span className="option--subhead">{option.optionOne.title}</span>
+							<span className="subtext">{option.optionOne.description}</span>
 						</label>
 					</div>
-					<div >
-						<input type="radio" name="service" id="2" />
-						<label htmlFor="2">
-							<h4>{option.option2}</h4>
-							<p>{option.option2Details}</p>
+					<div onChange={(e) => changeWord(e.target.value)} >
+						<input type="radio" name={option.id}   id={option.optionTwo.id} />
+						<label className="option__inner" htmlFor={option.optionTwo.title}>
+							<span className="option--subhead">{option.optionTwo.title}</span>
+							<span className="subtext">{option.optionTwo.description}</span>
 						</label>
 					</div>
 
-					<div>
-						<input type="radio" name="service" id="3" />
-						<label htmlFor="3">
-							<h4>{option.option3}</h4>
-							<p>{option.option3Details}</p>
+					<div onChange={(e) => changeWord(e.target.value)} >
+						<input type="radio" name={option.id}  id={option.optionThree.id} />
+						<label className="option__inner" htmlFor={option.optionThree.title}>
+							<span className="option--subhead">{option.optionThree.title}</span>
+							<span className="subtext">{option.optionThree.description}</span>
 						</label>
 					</div>
 				</div>

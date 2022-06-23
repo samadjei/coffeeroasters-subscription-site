@@ -2,11 +2,20 @@
 
 .steps {
 	padding-top: 16.8rem;
+	@include breakpoint(medium) {
+		padding-top: 14.4rem;
+	}
+	@include breakpoint(xsmall) {
+		padding-top: 12rem;
+	}
 
 	&__bg {
 		background: var(--dark-grey-blue);
 		color: var(--light-cream);
 		padding: 9.1rem 0 4rem 8.1rem;
+		@include breakpoint(medium) {
+			padding: 8rem 2rem 0rem 2.4rem ;
+		}
 		border-radius: var(--border-radius-default);
 	}
 
@@ -47,6 +56,12 @@
 // Quesiton
 .questions {
 	padding-top: 16.8rem;
+	@include breakpoint(medium) {
+		padding-top: 14.4rem;
+	}
+	@include breakpoint(xsmall) {
+		padding-top: 12rem;
+	}
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -59,9 +74,27 @@
 .option {
 	padding-bottom: 8.8rem;
 	cursor: pointer;
+
+	&__btn {
+		border: none;
+		background: none;
+		width: 100%;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__chevron {
+		font-size: 3rem;
+		color: var(--dark-cyan);
+		font-weight: var(--font-weight-900);
+		margin-left: auto;
+	}
+
 	&--title {
 		color: var(--grey);
 		transition: all 0.4s ease;
+		
 	}
 
 	&--subhead {
@@ -97,21 +130,23 @@
 	}
 }
 
+
+
 // Toggles
 
-.questions .option.open .option--title::after {
-	transform: translateY(-50%) rotate(180deg);
-}
+// .questions .option.open .option--title::after {
+// 	transform: translateY(-50%) rotate(180deg);
+// }
 
-.option__toggle {
-	display: flex;
-	align-items: center;
-}
+// .option__toggle {
+// 	display: flex;
+// 	align-items: center;
+// }
 
-.option__chevron {
-	margin-left: auto;
-	// transition: all 0.4s ease-in-out;
-}
+// .option__chevron {
+// 	margin-left: auto;
+// 	// transition: all 0.4s ease-in-out;
+// }
 
 .rotate {
 	transform: translateY(-50%) rotate(180deg);
@@ -123,6 +158,9 @@
 }
 
 .select {
+	@include breakpoint(medium) {
+		display: none;
+	}
 	&__content {
 		display: flex;
 		justify-content: space-between;
@@ -147,44 +185,147 @@
 	}
 }
 
-
 input[type='radio']:checked + .option__inner {
 	background: var(--dark-cyan);
 }
 
 
 input[type='radio'] {
-	// display: none;
+	display: none;
 }
 
 
-// Selects
-.accordion {
-  max-width: 15rem;
-  margin-bottom: 0.5rem;
+.summary {
+	background: var(--dark-grey-blue);
+	padding: 2.7rem 6.4rem;
+	border-radius: 0.8rem;
+	@include breakpoint(medium) {
+		padding: 3.2rem 2.4rem;
+	}
+
+	&--title {
+		font-family: var(--font-text);
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 26px;
+		color: var(--white);
+		text-transform: uppercase;
+		opacity: 0.5;
+
+	}
+	
+	&--details {
+		font-family: var(--font-header);
+		font-weight: 900;
+		font-size: 24px;
+		line-height: 40px;
+		color: var(--white);
+	}
+
+	&--options {
+		color: var(--dark-cyan);
+	}
 }
 
-.accordion button {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	// padding: 5rem;
+	z-index: 1000;
+	background: var(--white);
+	border-radius: 0.8rem;
+	width: 54rem;
+	@include breakpoint(xsmall) {
+		width: 80%;
+
+	}
+
+	&__header {
+		background: var(--dark-grey-blue);
+		padding: 4.8rem 5.6rem;
+	}
+
+	&--title {
+		color: var(--white);
+	}
+
+	&__content{
+		padding: 5.6rem;
+		@include breakpoint(medium) {
+			padding: 4rem;
+		}
+	}
+
+	&--info {
+		font-family: var(--font-header);
+		font-weight: var(--font-weight-900);
+		font-size: 2.4rem;
+		line-height: 4.0rem;
+		color: var(--grey);
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 4.7rem;
+		@include breakpoint(medium) {
+			justify-content: center;
+		}
+
+		.btn-primary {
+			width: 100%;
+		}
+	}
+
+	&--total {
+		font-family: var(--font-header);
+		font-weight: var(--font-weight-900);
+		font-size: 3.2rem;
+		line-height: 3.6rem;
+		color: var(--dark-grey-blue);
+		padding-right: 2.3rem;
+		@include breakpoint(xsmall) {
+			display: none
+		}
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .7);
+		z-index: 1000;
+	}
+
+	&__mobile {
+		display: none;
+		@include breakpoint(xsmall) {
+			display: block;
+		}
+	};
+	&__desktop {
+		display: block;
+		@include breakpoint(xsmall) {
+			display: none;
+		}
+	};
 }
 
-.accordion button:hover {
-  background: var(--primary-color);
-}
 
-.accordion .content {
-  padding: 0.5rem;
-  background: #f7f7f7;
-}
 
-.selects-flex {
+.button__wrapper {
+	position: relative;
+	z-index: 1;
+	margin-top: 4rem;
 	display: flex;
+	justify-content: flex-end;
+	@include breakpoint(medium) {
+		justify-content: center;
+	}
 }
