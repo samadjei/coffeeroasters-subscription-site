@@ -28,19 +28,17 @@ const Modal = ({ open, onClose, drink,
           <span className="modal--total">$14.00/mo</span>
           <div className="modal__mobile">
             <Button onClick={onClose}
-                children={`Checkout - ${price}`}
                 className="btn"
                 buttonStyle="btn--primary"
                 buttonSize="btn--desktop"
-              />
+              >Checkout - {price}</Button>
           </div>
           <div className="modal__desktop">
           <Button onClick={onClose}
-              children={`Checkout`}
               className="btn"
               buttonStyle="btn--primary"
               buttonSize="btn--desktop"
-            />
+            >Checkout</Button>
           </div>
         </div>
         </div>

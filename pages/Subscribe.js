@@ -75,11 +75,10 @@ const Subscribe = () => {
           <div className="button__wrapper">
             <Button
               onClick={() => setModalOpen(true)}
-              children="Create a plan"
               className="btn"
               buttonStyle="btn--primary"
               buttonSize="btn--desktop"
-            />
+            >Create a plan</Button>
             <Modal
               drink={drink}
               type={type}
