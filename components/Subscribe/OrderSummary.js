@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderSummary = ({drink, type, quantity, grind, frequency}) => {
+const OrderSummary = ({ drink, type, quantity, grind, frequency }) => {
 	return (
 		<div className="summary">
 			<span className='summary--title'>Order Summary</span>

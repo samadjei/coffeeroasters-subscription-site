@@ -13,16 +13,16 @@ const Selects = (props) => {
         <span>{expand ? <FiChevronUp className="option__chevron"/> : <FiChevronDown className="option__chevron"/>}</span>
       </button>
       {expand && 
-        <div className="option__items">
+        <form className="option__items">
 					<div onChange={(e) => changeWord(e.target.value)} >
-						<input type="radio" name={option.id}  id={option.optionOne.id} />
+						<input type="radio" name={option.id}  id={option.optionOne.id} value={option.optionOne.title} />
 						<label className="option__inner" htmlFor={option.optionOne.title}>
 							<span className="option--subhead">{option.optionOne.title}</span>
 							<span className="subtext">{option.optionOne.description}</span>
 						</label>
 					</div>
 					<div onChange={(e) => changeWord(e.target.value)} >
-						<input type="radio" name={option.id}   id={option.optionTwo.id} />
+						<input type="radio" name={option.id}   id={option.optionTwo.id} value={option.optionTwo.title} />
 						<label className="option__inner" htmlFor={option.optionTwo.title}>
 							<span className="option--subhead">{option.optionTwo.title}</span>
 							<span className="subtext">{option.optionTwo.description}</span>
@@ -30,13 +30,13 @@ const Selects = (props) => {
 					</div>
 
 					<div onChange={(e) => changeWord(e.target.value)} >
-						<input type="radio" name={option.id}  id={option.optionThree.id} />
+						<input type="radio" name={option.id}  id={option.optionThree.id} value={option.optionThree.title} />
 						<label className="option__inner" htmlFor={option.optionThree.title}>
 							<span className="option--subhead">{option.optionThree.title}</span>
 							<span className="subtext">{option.optionThree.description}</span>
 						</label>
 					</div>
-				</div>
+				</form>
         
         }
     </div>
